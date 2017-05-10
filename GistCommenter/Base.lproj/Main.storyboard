@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bzp-IR-NZF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,7 +19,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GistCommenter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="GistCommenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -30,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To read QR Codes you need to grant camera access to the app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-yk-jtA">
-                                <rect key="frame" x="24" y="322" width="327" height="23"/>
+                                <rect key="frame" x="48" y="312" width="279" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Collegiate" family="Collegiate" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -54,13 +53,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.071460023519999999" green="0.58449763060000004" blue="0.96896433829999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Aju-yk-jtA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="2PL-rI-73F"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9eH-Kl-TGA" secondAttribute="bottom" constant="20" id="5NM-KC-toC"/>
                             <constraint firstItem="Aju-yk-jtA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="63j-vx-cO6"/>
                             <constraint firstItem="PrC-tx-uu9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AOB-HM-DsI"/>
-                            <constraint firstItem="Aju-yk-jtA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="EMk-2X-wOe"/>
                             <constraint firstItem="PrC-tx-uu9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="EnH-x5-q41"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aju-yk-jtA" secondAttribute="trailing" constant="32" id="Y8b-HM-Km5"/>
                             <constraint firstItem="9eH-Kl-TGA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s3D-0X-6ZW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aju-yk-jtA" secondAttribute="trailing" constant="8" id="zq2-Vh-9FI"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -72,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="18"/>
+            <point key="canvasLocation" x="1596" y="17.541229385307346"/>
         </scene>
         <!--Begin View Controller-->
         <scene sceneID="lzB-fI-hHO">
@@ -247,7 +246,7 @@
                                 <color key="currentPageIndicatorTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide for more info!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7S-Qy-EnI">
-                                <rect key="frame" x="135.5" y="514.5" width="104" height="20.5"/>
+                                <rect key="frame" x="136" y="514.5" width="104" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Collegiate" family="Collegiate" pointSize="15.800000190734863"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

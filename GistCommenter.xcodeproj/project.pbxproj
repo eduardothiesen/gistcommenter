@@ -29,6 +29,7 @@
 		7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */; };
 		7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */; };
 		7D52094E1EC33D7B00637685 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D52094D1EC33D7B00637685 /* AVFoundation.framework */; };
+		7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
 		7D52094D1EC33D7B00637685 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveGistRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,9 +200,10 @@
 		7D49B1011EC287E500D22A66 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */,
 				7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */,
 				7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */,
-				7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */,
+				7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */,
 				7D32717C1EC3366900DC373B /* KeychainWrapper.swift in Sources */,
 				7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */,
+				7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */,
 				7D32717B1EC3366900DC373B /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

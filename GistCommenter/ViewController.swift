@@ -121,7 +121,7 @@ class ViewController: UIViewController {
     
     func showAuthorizedScreen() {
         welcomeTitleLabel.isHidden = true
-        welcomeMessageLabel.text = "Are you ready? (:"
+        welcomeMessageLabel.text = "Are you ready? (:\n\nScan a QR Code containing a link to a gist or its id"
         accessButton.setTitle("Start Camera", for: .normal)
     }
 }
@@ -138,9 +138,18 @@ extension AVCaptureMetadataOutputObjects: AVCaptureMetadataOutputObjectsDelegate
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if supportedCodeTypes.contains(metadataObj.type) {
-            print(metadataObj.stringValue)
+            captureSession?.stopRunning()
+            let gistString = metadataObj.stringValue!
+            var gistId : String!
+            if gistString.contains("http") {
+                gistId = gistString.components(separatedBy: "/").last
+            } else {
+                gistId = gistString
+            }
+            
+            print(gistId)
+            
         }
-
     }
 }
 

@@ -86,9 +86,13 @@ class LoginViewController: UIViewController {
     }
     
     func didAuthenticateSuccefully(notification: Notification) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView")
+        
         OperationQueue.main.addOperation {
             self.enableFields()
             self.loader.stopAnimating()
+            
+            self.show(viewController!, sender: viewController)
         }
     }
     

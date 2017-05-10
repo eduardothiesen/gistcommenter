@@ -18,4 +18,9 @@ class NetworkController: NSObject {
         let authenticationRequest = AuthenticationRequest(url: baseURL + "authorizations", username: username, password: password)
         authenticationRequest.start()
     }
+    
+    func retrieveGist(id: String) {
+        let retrieveGistRequest = RetrieveGistRequest(url: baseURL + "gists/" + id)
+        retrieveGistRequest.start()
+    }
 }
