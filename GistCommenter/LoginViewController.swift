@@ -16,22 +16,29 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var backButton: UIButton!
     
-//    var networkController : NetworkController!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
         
-        loginButton.setTitle("Entrar", for: .normal)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.hideKeyboards))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-//        networkController = NetworkController()
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.didAuthenticateSuccefully(notification:)), name: NSNotification.Name(rawValue: "kDidAuthenticateUser"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.didReceiveAuthenticationError(notification:)), name: NSNotification.Name(rawValue: "kDidReceiveLoginError"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.didReceiveInternetConnectionError(notification:)), name: NSNotification.Name(rawValue: "kNoInternetConnection"), object: nil)
-
+        
+        usernameTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,10 +56,8 @@ class LoginViewController: UIViewController {
             disableFields()
             
             NetworkController.shared.login(username: usernameTextField.text!, password: passwordTextField.text!)
-            
-//            networkController.login(email: emailTextField.text!, password: passwordTextField.text!)
         } else {
-//            Alert.createAlert(title: "Atenção", message: "Você precisa preencher o e-mail e senha para se logar.", viewController: self)
+            Alert.createAlert(title: "Enter username and password", message: "All fields are required for authentication", viewController: self)
         }
 
     }
@@ -64,7 +69,7 @@ class LoginViewController: UIViewController {
 
     func enableFields() {
         usernameTextField.isEnabled = true
-        usernameTextField.isEnabled = true
+        passwordTextField.isEnabled = true
         loginButton.isEnabled = true
         backButton.isEnabled = true
     }
@@ -76,23 +81,32 @@ class LoginViewController: UIViewController {
         backButton.isEnabled = false
     }
     
+    func hideKeyboards() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    func didAuthenticateSuccefully(notification: Notification) {
+        OperationQueue.main.addOperation {
+            self.enableFields()
+            self.loader.stopAnimating()
+        }
+    }
+    
     func didReceiveInternetConnectionError(notification: Notification) {
         let userInfo = notification.userInfo as! [String : Any]
         
         OperationQueue.main.addOperation {
             self.enableFields()
             self.loader.stopAnimating()
-//            Alert.createAlert(title: "", message: userInfo["Error"] as! String, viewController: self)
+            Alert.createAlert(title: "", message: userInfo["Error"] as! String, viewController: self)
         }
     }
     
     func didReceiveAuthenticationError(notification: Notification) {
         let userInfo = notification.userInfo as! [String : Any]
-        print(userInfo["title"] as! String?)
-        print(userInfo["description"] as! String?)
         
         OperationQueue.main.addOperation {
-//            Alert.createAlert(title: userInfo["title"] as! String?, message: userInfo["description"] as! String, viewController: self)
+            Alert.createAlert(title: userInfo["title"] as! String?, message: userInfo["description"] as! String, viewController: self)
             
             self.enableFields()
             self.loader.stopAnimating()
@@ -106,6 +120,7 @@ extension LoginViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else {
             passwordTextField.resignFirstResponder()
+            userDidTouchUpInsideLoginButton(self)
         }
         
         return true

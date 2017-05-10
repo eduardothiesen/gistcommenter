@@ -14,6 +14,9 @@
 		7D117E3A1EC2A3C400DBDC4C /* COLLEGIA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D117E381EC2A3C400DBDC4C /* COLLEGIA.otf */; };
 		7D117E3B1EC2A3C400DBDC4C /* COLLEGIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D117E391EC2A3C400DBDC4C /* COLLEGIA.ttf */; };
 		7D117E3D1EC2AE4300DBDC4C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */; };
+		7D32717B1EC3366900DC373B /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3271791EC3366900DC373B /* KeychainItemAccessibility.swift */; };
+		7D32717C1EC3366900DC373B /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D32717A1EC3366900DC373B /* KeychainWrapper.swift */; };
+		7D3271801EC33B1D00DC373B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D32717E1EC33B1D00DC373B /* Alert.swift */; };
 		7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */; };
 		7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D21EC2877F00D22A66 /* ViewController.swift */; };
 		7D49B0D61EC2877F00D22A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49B0D41EC2877F00D22A66 /* Main.storyboard */; };
@@ -25,6 +28,7 @@
 		7D49B1071EC288E000D22A66 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */; };
 		7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */; };
 		7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */; };
+		7D52094E1EC33D7B00637685 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D52094D1EC33D7B00637685 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,9 @@
 		7D117E381EC2A3C400DBDC4C /* COLLEGIA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = COLLEGIA.otf; sourceTree = "<group>"; };
 		7D117E391EC2A3C400DBDC4C /* COLLEGIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = COLLEGIA.ttf; sourceTree = "<group>"; };
 		7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		7D3271791EC3366900DC373B /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		7D32717A1EC3366900DC373B /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		7D32717E1EC33B1D00DC373B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7D49B0CD1EC2877F00D22A66 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D49B0D21EC2877F00D22A66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 		7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
+		7D52094D1EC33D7B00637685 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D52094E1EC33D7B00637685 /* AVFoundation.framework in Frameworks */,
 				7D49B1071EC288E000D22A66 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +110,9 @@
 		7D117E2F1EC296B400DBDC4C /* UTILS */ = {
 			isa = PBXGroup;
 			children = (
+				7D32717E1EC33B1D00DC373B /* Alert.swift */,
+				7D3271791EC3366900DC373B /* KeychainItemAccessibility.swift */,
+				7D32717A1EC3366900DC373B /* KeychainWrapper.swift */,
 				7D117E2D1EC2968400DBDC4C /* CustomTextField.swift */,
 			);
 			name = UTILS;
@@ -196,6 +208,7 @@
 		7D49B1051EC288E000D22A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D52094D1EC33D7B00637685 /* AVFoundation.framework */,
 				7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
@@ -351,10 +364,13 @@
 				7D49B0D91EC2878000D22A66 /* GistCommenter.xcdatamodeld in Sources */,
 				7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */,
 				7D117E2E1EC2968400DBDC4C /* CustomTextField.swift in Sources */,
+				7D3271801EC33B1D00DC373B /* Alert.swift in Sources */,
 				7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */,
 				7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */,
 				7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */,
+				7D32717C1EC3366900DC373B /* KeychainWrapper.swift in Sources */,
 				7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */,
+				7D32717B1EC3366900DC373B /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -494,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

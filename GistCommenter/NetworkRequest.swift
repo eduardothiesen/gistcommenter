@@ -12,7 +12,6 @@ import MobileCoreServices
 import MobileCoreServices
 
 class NetworkRequest: Operation, URLSessionDataDelegate {
-//    let keychain = KeychainItemWrapper(identifier: "token", accessGroup: nil)
     var sessionTask: URLSessionTask?
     var error: Error?
     var statusCode: Int?

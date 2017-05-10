@@ -44,12 +44,30 @@ class AuthenticationRequest: NetworkRequest {
     
     override func processData() {
         let data = try! JSONSerialization.jsonObject(with: incomingData as Data, options: .allowFragments) as! [String : Any]
-        print(data)
+        
+        KeychainWrapper.standard.set(data["token"] as! String, forKey: "token")
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidAuthenticateUser"), object: nil)
     }
     
     override func processErrorData() {
         let data = try! JSONSerialization.jsonObject(with: incomingData as Data, options: .allowFragments) as! [String : Any]
-        print(data)
+        
+        var userInfo: [String : Any] = [:]
+        let title = "Ops, something went wrong"
+        var description = ""
+        
+        if data["message"] as? String == "Bad credentials" {
+            description = "The username or password are incorrect. Please, try again."
+        }
+        //TODO: Map other erros for user friendly messages
+        else {
+            description = data["message"] as! String
+        }
+        
+        userInfo["title"] = title
+        userInfo["description"] = description
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidReceiveLoginError"), object: nil, userInfo: userInfo)
     }
-
 }

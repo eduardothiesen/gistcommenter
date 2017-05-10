@@ -1,9 +1,9 @@
 //
 //  CustomDoshiTextField.swift
-//  Doshi
+//  GistCommenter
 //
-//  Created by Eduardo Thiesen on 11/22/16.
-//  Copyright © 2016 doshi. All rights reserved.
+//  Created by Eduardo Thiesen on 09/05/17.
+//  Copyright © 2017 Eduardo Thiesen. All rights reserved.
 //
 
 import UIKit
