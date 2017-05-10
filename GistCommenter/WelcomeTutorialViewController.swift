@@ -10,28 +10,11 @@ import UIKit
 
 class WelcomeTutorialViewController: UIViewController {
 
+    @IBOutlet weak var tutorialPage2AspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tutorialPage3AspectRatioConstraint: NSLayoutConstraint!
     
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var pageControl: UIPageControl!
-    
-    @IBOutlet var page1Label: UILabel!
-    @IBOutlet var page2Label: UILabel!
-    @IBOutlet var page3Label: UILabel!
-    
-    @IBOutlet var leadingSpacePage1LabelConstraint: NSLayoutConstraint!
-    @IBOutlet var trailingSpacePage1LabelConstraint: NSLayoutConstraint!
-    @IBOutlet var leadingSpacePage2LabelConstraint: NSLayoutConstraint!
-    @IBOutlet var trailingSpacePage2LabelConstraint: NSLayoutConstraint!
-    @IBOutlet var leadingSpacePage3LabelConstraint: NSLayoutConstraint!
-    @IBOutlet var trailingSpacePage3LabelConstraint: NSLayoutConstraint!
-    
-    @IBOutlet var page1widthConstraint: NSLayoutConstraint!
-    @IBOutlet var page2widthConstraint: NSLayoutConstraint!
-    @IBOutlet var page3widthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet var page1topSpaceToLabelConstraint: NSLayoutConstraint!
-    @IBOutlet var page2topSpaceToLabelConstraint: NSLayoutConstraint!
-    @IBOutlet var page3topSpaceToLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var timer: Timer!
     
@@ -49,32 +32,12 @@ class WelcomeTutorialViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        if UIScreen.main.bounds.height == 480 {
-            page1Label.font = UIFont(name: "HelveticaNeue-Medium", size: 20.0)
-            page2Label.font = UIFont(name: "HelveticaNeue-Medium", size: 20.0)
-            page3Label.font = UIFont(name: "HelveticaNeue-Medium", size: 19.0)
-            
-            page1topSpaceToLabelConstraint.constant = 8
-            page2topSpaceToLabelConstraint.constant = 8
-            page3topSpaceToLabelConstraint.constant = 8
-            
-            leadingSpacePage1LabelConstraint.constant = 12
-            trailingSpacePage1LabelConstraint.constant = 12
-            leadingSpacePage2LabelConstraint.constant = 12
-            trailingSpacePage2LabelConstraint.constant = 12
-            leadingSpacePage3LabelConstraint.constant = 12
-            trailingSpacePage3LabelConstraint.constant = 12
-            
-            page1widthConstraint.constant = -60
-            page2widthConstraint.constant = -60
-            page3widthConstraint.constant = -65
-        } else if UIScreen.main.bounds.height == 568 {
-            leadingSpacePage3LabelConstraint.constant = 16
-            trailingSpacePage3LabelConstraint.constant = 16
-            
-            page1widthConstraint.constant = -25
-            page2widthConstraint.constant = -25
-            page3widthConstraint.constant = -25
+        super.viewDidLayoutSubviews()
+        
+        //Fix interface for iPhone SE, 5 and 4
+        if UIScreen.main.bounds.height <= 568 {
+            tutorialPage2AspectRatioConstraint.constant = 100
+            tutorialPage3AspectRatioConstraint.constant = 100
         }
         
         self.view.layoutIfNeeded()
@@ -93,7 +56,7 @@ extension WelcomeTutorialViewController: UIScrollViewDelegate {
         let page = ceil( (scrollView.contentOffset.x / scrollView.frame.size.width))
         pageControl.currentPage = Int(page)
         
-        if page == 3 {
+        if page == 2 {
             timer.invalidate()
         }
     }

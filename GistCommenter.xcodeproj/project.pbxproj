@@ -11,6 +11,9 @@
 		7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */; };
 		7D117E341EC2995C00DBDC4C /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E311EC2995C00DBDC4C /* BeginViewController.swift */; };
 		7D117E351EC2995C00DBDC4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E321EC2995C00DBDC4C /* LoginViewController.swift */; };
+		7D117E3A1EC2A3C400DBDC4C /* COLLEGIA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D117E381EC2A3C400DBDC4C /* COLLEGIA.otf */; };
+		7D117E3B1EC2A3C400DBDC4C /* COLLEGIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D117E391EC2A3C400DBDC4C /* COLLEGIA.ttf */; };
+		7D117E3D1EC2AE4300DBDC4C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */; };
 		7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */; };
 		7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D21EC2877F00D22A66 /* ViewController.swift */; };
 		7D49B0D61EC2877F00D22A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49B0D41EC2877F00D22A66 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTutorialViewController.swift; sourceTree = "<group>"; };
 		7D117E311EC2995C00DBDC4C /* BeginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		7D117E321EC2995C00DBDC4C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D117E381EC2A3C400DBDC4C /* COLLEGIA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = COLLEGIA.otf; sourceTree = "<group>"; };
+		7D117E391EC2A3C400DBDC4C /* COLLEGIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = COLLEGIA.ttf; sourceTree = "<group>"; };
+		7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		7D49B0CD1EC2877F00D22A66 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D49B0D21EC2877F00D22A66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,15 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		7D117E371EC2A39700DBDC4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D117E381EC2A3C400DBDC4C /* COLLEGIA.otf */,
+				7D117E391EC2A3C400DBDC4C /* COLLEGIA.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7D49B0C41EC2877F00D22A66 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +153,7 @@
 				7D49B1041EC2885D00D22A66 /* GistCommenter.entitlements */,
 				7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */,
 				7D117E2F1EC296B400DBDC4C /* UTILS */,
+				7D117E371EC2A39700DBDC4C /* Resources */,
 				7D49B1011EC287E500D22A66 /* Network */,
 				7D117E361EC299E400DBDC4C /* View Controllers */,
 				7D49B0D41EC2877F00D22A66 /* Main.storyboard */,
@@ -172,6 +188,7 @@
 			children = (
 				7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */,
 				7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */,
+				7D117E3C1EC2AE4300DBDC4C /* NetworkController.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -302,6 +319,8 @@
 				7D49B0DE1EC2878000D22A66 /* LaunchScreen.storyboard in Resources */,
 				7D49B0DB1EC2878000D22A66 /* Assets.xcassets in Resources */,
 				7D49B0D61EC2877F00D22A66 /* Main.storyboard in Resources */,
+				7D117E3A1EC2A3C400DBDC4C /* COLLEGIA.otf in Resources */,
+				7D117E3B1EC2A3C400DBDC4C /* COLLEGIA.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D117E3D1EC2AE4300DBDC4C /* NetworkController.swift in Sources */,
 				7D117E351EC2995C00DBDC4C /* LoginViewController.swift in Sources */,
 				7D117E341EC2995C00DBDC4C /* BeginViewController.swift in Sources */,
 				7D49B0D91EC2878000D22A66 /* GistCommenter.xcdatamodeld in Sources */,

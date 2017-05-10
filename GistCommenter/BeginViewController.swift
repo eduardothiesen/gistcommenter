@@ -21,6 +21,10 @@ class BeginViewController: UIViewController {
         
         UIApplication.shared.statusBarStyle = .lightContent
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

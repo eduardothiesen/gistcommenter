@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var emailTextField: CustomTextField!
+    @IBOutlet var usernameTextField: CustomTextField!
     @IBOutlet var passwordTextField: CustomTextField!
     @IBOutlet var loader: UIActivityIndicatorView!
     @IBOutlet var loginButton: UIButton!
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailTextField.delegate = self
+        usernameTextField.delegate = self
         passwordTextField.delegate = self
         
         loginButton.setTitle("Entrar", for: .normal)
@@ -39,10 +39,16 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func userDidTouchUpInsideLoginButton(_ sender: AnyObject) {
-        if emailTextField.text != "" && passwordTextField.text != "" {
+        if usernameTextField.text != "" && passwordTextField.text != "" {
             loader.startAnimating()
             disableFields()
+            
+            NetworkController.shared.login(username: usernameTextField.text!, password: passwordTextField.text!)
             
 //            networkController.login(email: emailTextField.text!, password: passwordTextField.text!)
         } else {
@@ -57,14 +63,14 @@ class LoginViewController: UIViewController {
     
 
     func enableFields() {
-        emailTextField.isEnabled = true
-        passwordTextField.isEnabled = true
+        usernameTextField.isEnabled = true
+        usernameTextField.isEnabled = true
         loginButton.isEnabled = true
         backButton.isEnabled = true
     }
     
     func disableFields() {
-        emailTextField.isEnabled = false
+        usernameTextField.isEnabled = false
         passwordTextField.isEnabled = false
         loginButton.isEnabled = false
         backButton.isEnabled = false
@@ -96,7 +102,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
+        if textField == usernameTextField {
             passwordTextField.becomeFirstResponder()
         } else {
             passwordTextField.resignFirstResponder()

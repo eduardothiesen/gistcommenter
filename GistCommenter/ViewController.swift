@@ -12,10 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let auth = AuthenticationRequest(url: "https://api.github.com/user", username: "eduardothiesen", password: "196420Cadu");
-        auth.start()
     }
 
     override func didReceiveMemoryWarning() {

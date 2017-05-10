@@ -9,6 +9,10 @@
 import UIKit
 
 class AuthenticationRequest: NetworkRequest {
+    
+    private static let clientId = "954063a3457af60766f5"
+    private static let clientSecret = "645d8129912a09061a14134ae3d470c8c87da921"
+    
     var url: String
     var username: String
     var password: String
@@ -20,13 +24,18 @@ class AuthenticationRequest: NetworkRequest {
     }
     
     override func start() {
-        let params = String(format: "%@:%@", username, password)
+        let auth = "\(username):\(password)".data(using: String.Encoding.utf8)
+        let params = ["scopes" : ["gist"],
+                      "client_id" : AuthenticationRequest.clientId,
+                      "client_secret" : AuthenticationRequest.clientSecret] as [String : Any]
         
         var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("Basic \(params.data(using: String.Encoding.utf8)!.base64EncodedString())", forHTTPHeaderField: "Authorization")
+        request.addValue("Basic \(auth!.base64EncodedString())", forHTTPHeaderField: "Authorization")
+        
+        request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         
         sessionTask = localURLSession?.dataTask(with: request)
         sessionTask?.resume()
@@ -39,7 +48,8 @@ class AuthenticationRequest: NetworkRequest {
     }
     
     override func processErrorData() {
-        
+        let data = try! JSONSerialization.jsonObject(with: incomingData as Data, options: .allowFragments) as! [String : Any]
+        print(data)
     }
 
 }
