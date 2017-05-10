@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D117E2E1EC2968400DBDC4C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E2D1EC2968400DBDC4C /* CustomTextField.swift */; };
+		7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */; };
+		7D117E341EC2995C00DBDC4C /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E311EC2995C00DBDC4C /* BeginViewController.swift */; };
+		7D117E351EC2995C00DBDC4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D117E321EC2995C00DBDC4C /* LoginViewController.swift */; };
 		7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */; };
 		7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0D21EC2877F00D22A66 /* ViewController.swift */; };
 		7D49B0D61EC2877F00D22A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49B0D41EC2877F00D22A66 /* Main.storyboard */; };
@@ -15,6 +19,9 @@
 		7D49B0DE1EC2878000D22A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49B0DC1EC2878000D22A66 /* LaunchScreen.storyboard */; };
 		7D49B0E91EC2878000D22A66 /* GistCommenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0E81EC2878000D22A66 /* GistCommenterTests.swift */; };
 		7D49B0F41EC2878000D22A66 /* GistCommenterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B0F31EC2878000D22A66 /* GistCommenterUITests.swift */; };
+		7D49B1071EC288E000D22A66 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */; };
+		7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */; };
+		7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D117E2D1EC2968400DBDC4C /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTutorialViewController.swift; sourceTree = "<group>"; };
+		7D117E311EC2995C00DBDC4C /* BeginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		7D117E321EC2995C00DBDC4C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7D49B0CD1EC2877F00D22A66 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D49B0D21EC2877F00D22A66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +60,10 @@
 		7D49B0EF1EC2878000D22A66 /* GistCommenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistCommenterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49B0F31EC2878000D22A66 /* GistCommenterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommenterUITests.swift; sourceTree = "<group>"; };
 		7D49B0F51EC2878000D22A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D49B1041EC2885D00D22A66 /* GistCommenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistCommenter.entitlements; sourceTree = "<group>"; };
+		7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D49B1071EC288E000D22A66 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D117E2F1EC296B400DBDC4C /* UTILS */ = {
+			isa = PBXGroup;
+			children = (
+				7D117E2D1EC2968400DBDC4C /* CustomTextField.swift */,
+			);
+			name = UTILS;
+			sourceTree = "<group>";
+		};
+		7D117E361EC299E400DBDC4C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */,
+				7D117E311EC2995C00DBDC4C /* BeginViewController.swift */,
+				7D117E321EC2995C00DBDC4C /* LoginViewController.swift */,
+				7D49B0D21EC2877F00D22A66 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		7D49B0C41EC2877F00D22A66 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +118,7 @@
 				7D49B0E71EC2878000D22A66 /* GistCommenterTests */,
 				7D49B0F21EC2878000D22A66 /* GistCommenterUITests */,
 				7D49B0CE1EC2877F00D22A66 /* Products */,
+				7D49B1051EC288E000D22A66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +135,11 @@
 		7D49B0CF1EC2877F00D22A66 /* GistCommenter */ = {
 			isa = PBXGroup;
 			children = (
+				7D49B1041EC2885D00D22A66 /* GistCommenter.entitlements */,
 				7D49B0D01EC2877F00D22A66 /* AppDelegate.swift */,
-				7D49B0D21EC2877F00D22A66 /* ViewController.swift */,
+				7D117E2F1EC296B400DBDC4C /* UTILS */,
+				7D49B1011EC287E500D22A66 /* Network */,
+				7D117E361EC299E400DBDC4C /* View Controllers */,
 				7D49B0D41EC2877F00D22A66 /* Main.storyboard */,
 				7D49B0DA1EC2878000D22A66 /* Assets.xcassets */,
 				7D49B0DC1EC2878000D22A66 /* LaunchScreen.storyboard */,
@@ -126,6 +165,23 @@
 				7D49B0F51EC2878000D22A66 /* Info.plist */,
 			);
 			path = GistCommenterUITests;
+			sourceTree = "<group>";
+		};
+		7D49B1011EC287E500D22A66 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */,
+				7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		7D49B1051EC288E000D22A66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +254,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BV2VZRHZBG;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					7D49B0E31EC2878000D22A66 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -265,9 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D117E351EC2995C00DBDC4C /* LoginViewController.swift in Sources */,
+				7D117E341EC2995C00DBDC4C /* BeginViewController.swift in Sources */,
 				7D49B0D91EC2878000D22A66 /* GistCommenter.xcdatamodeld in Sources */,
 				7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */,
+				7D117E2E1EC2968400DBDC4C /* CustomTextField.swift in Sources */,
+				7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */,
+				7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */,
 				7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */,
+				7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GistCommenter/GistCommenter.entitlements;
 				DEVELOPMENT_TEAM = BV2VZRHZBG;
 				INFOPLIST_FILE = GistCommenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -432,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GistCommenter/GistCommenter.entitlements;
 				DEVELOPMENT_TEAM = BV2VZRHZBG;
 				INFOPLIST_FILE = GistCommenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -518,6 +587,7 @@
 				7D49B0FA1EC2878000D22A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D49B0FB1EC2878000D22A66 /* Build configuration list for PBXNativeTarget "GistCommenterTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +596,7 @@
 				7D49B0FD1EC2878000D22A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D49B0FE1EC2878000D22A66 /* Build configuration list for PBXNativeTarget "GistCommenterUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +605,7 @@
 				7D49B1001EC2878000D22A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
