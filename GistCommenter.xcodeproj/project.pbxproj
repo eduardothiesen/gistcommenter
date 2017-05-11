@@ -30,6 +30,8 @@
 		7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */; };
 		7D52094E1EC33D7B00637685 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D52094D1EC33D7B00637685 /* AVFoundation.framework */; };
 		7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */; };
+		7D8E3A191EC3C3C1005FC419 /* GistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E3A181EC3C3C1005FC419 /* GistViewController.swift */; };
+		7D8E3A1E1EC3EEFE005FC419 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
 		7D52094D1EC33D7B00637685 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveGistRequest.swift; sourceTree = "<group>"; };
+		7D8E3A181EC3C3C1005FC419 /* GistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GistViewController.swift; path = ../GistViewController.swift; sourceTree = "<group>"; };
+		7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				7D117E311EC2995C00DBDC4C /* BeginViewController.swift */,
 				7D117E321EC2995C00DBDC4C /* LoginViewController.swift */,
 				7D49B0D21EC2877F00D22A66 /* ViewController.swift */,
+				7D8E3A181EC3C3C1005FC419 /* GistViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -169,10 +174,10 @@
 				7D117E2F1EC296B400DBDC4C /* UTILS */,
 				7D117E371EC2A39700DBDC4C /* Resources */,
 				7D49B1011EC287E500D22A66 /* Network */,
+				7D8E3A1F1EC3EF02005FC419 /* Model */,
 				7D117E361EC299E400DBDC4C /* View Controllers */,
-				7D49B0D41EC2877F00D22A66 /* Main.storyboard */,
+				7D8E3A1C1EC3EEEA005FC419 /* Storyboards */,
 				7D49B0DA1EC2878000D22A66 /* Assets.xcassets */,
-				7D49B0DC1EC2878000D22A66 /* LaunchScreen.storyboard */,
 				7D49B0DF1EC2878000D22A66 /* Info.plist */,
 				7D49B0D71EC2878000D22A66 /* GistCommenter.xcdatamodeld */,
 			);
@@ -215,6 +220,23 @@
 				7D49B1061EC288E000D22A66 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D8E3A1C1EC3EEEA005FC419 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7D49B0D41EC2877F00D22A66 /* Main.storyboard */,
+				7D49B0DC1EC2878000D22A66 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		7D8E3A1F1EC3EF02005FC419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,10 +390,12 @@
 				7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */,
 				7D117E2E1EC2968400DBDC4C /* CustomTextField.swift in Sources */,
 				7D3271801EC33B1D00DC373B /* Alert.swift in Sources */,
+				7D8E3A191EC3C3C1005FC419 /* GistViewController.swift in Sources */,
 				7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */,
 				7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */,
 				7D49B0D11EC2877F00D22A66 /* AppDelegate.swift in Sources */,
 				7D32717C1EC3366900DC373B /* KeychainWrapper.swift in Sources */,
+				7D8E3A1E1EC3EEFE005FC419 /* Gist.swift in Sources */,
 				7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */,
 				7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */,
 				7D32717B1EC3366900DC373B /* KeychainItemAccessibility.swift in Sources */,

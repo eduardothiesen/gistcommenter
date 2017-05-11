@@ -19,7 +19,11 @@ class BeginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        UIApplication.shared.statusBarStyle = .lightContent
+        if UserDefaults.standard.bool(forKey: "receivedInvalidTokenNotification") {
+            Alert.createAlert(title: "Ops, something went wrong", message: "Your session expired. Please, log in again.", viewController: self)
+            
+            UserDefaults.standard.set(false, forKey: "SessionExpired")
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

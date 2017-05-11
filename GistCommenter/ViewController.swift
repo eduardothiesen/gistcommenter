@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var accessButton: UIButton!
     @IBOutlet weak var welcomeMessageLabel: UILabel!
     @IBOutlet weak var welcomeTitleLabel: UILabel!
+    @IBOutlet weak var loadingScreen: UIActivityIndicatorView!
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -37,6 +38,32 @@ class ViewController: UIViewController {
             showAuthorizedScreen()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didReceiveGist(notification:)),
+                                               name: Notification.Name(rawValue: "kDidReceiveGist"), object: nil)
+
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didReceiveError(notification:)),
+                                               name: Notification.Name(rawValue: "kDidReceiveGistError"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didReceiveInternetConnectionError(notification:)), name: NSNotification.Name(rawValue: "kNoInternetConnection"), object: nil)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+        
+        accessButton.setTitle("Start Camera", for: .normal)
+        captureSession?.stopRunning()
+        videoPreviewLayer?.removeFromSuperlayer()
+        cameraLensIndicator?.removeFromSuperview()
+        loadingScreen.stopAnimating()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,6 +83,52 @@ class ViewController: UIViewController {
             captureSession?.stopRunning()
             videoPreviewLayer?.removeFromSuperlayer()
             cameraLensIndicator?.removeFromSuperview()
+            loadingScreen.stopAnimating()
+        }
+    }
+    
+    func didReceiveGist(notification: Notification) {
+        OperationQueue.main.addOperation { 
+            self.performSegue(withIdentifier: "gist", sender: self)
+        }
+    }
+    
+    func didReceiveError(notification: Notification) {
+        let userInfo = notification.userInfo as! [String : Any]
+        
+        let expired = userInfo["expired"] as? Bool
+        if let tokenExpired = expired {
+            if tokenExpired {
+                let viewController = self.storyboard?.instantiateViewController(withIdentifier: "beginViewController")
+                
+                OperationQueue.main.addOperation {
+                    self.show(viewController!, sender: viewController)
+                }
+            }
+        } else {
+            OperationQueue.main.addOperation {
+                self.loadingScreen.stopAnimating()
+                Alert.createAlert(title: userInfo["title"] as! String?, message: userInfo["description"] as! String, viewController: self)
+            }
+            
+            captureSession?.startRunning()
+        }
+    }
+    
+    func didReceiveInternetConnectionError(notification: Notification) {
+        let userInfo = notification.userInfo as! [String : Any]
+        
+        OperationQueue.main.addOperation {
+            self.loadingScreen.stopAnimating()
+    
+            let alertController = UIAlertController(title: "", message: userInfo["Error"] as? String, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+                self.captureSession?.startRunning()
+            })
+            
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -138,6 +211,9 @@ extension AVCaptureMetadataOutputObjects: AVCaptureMetadataOutputObjectsDelegate
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if supportedCodeTypes.contains(metadataObj.type) {
+            self.view.bringSubview(toFront: loadingScreen)
+            loadingScreen.startAnimating()
+            
             captureSession?.stopRunning()
             let gistString = metadataObj.stringValue!
             var gistId : String!
@@ -148,7 +224,7 @@ extension AVCaptureMetadataOutputObjects: AVCaptureMetadataOutputObjectsDelegate
             }
             
             print(gistId)
-            
+            NetworkController.shared.retrieveGist(id: gistId)
         }
     }
 }

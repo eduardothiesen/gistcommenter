@@ -31,10 +31,10 @@ class RetrieveGistRequest: NetworkRequest {
         let data = try! JSONSerialization.jsonObject(with: incomingData as Data, options: .allowFragments) as! [String : Any]
         
         print(data)
+    
+//        let gist = Gist()
         
-        KeychainWrapper.standard.set(data["token"] as! String, forKey: "token")
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidAuthenticateUser"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidReceiveGist"), object: nil, userInfo: nil)
     }
     
     override func processErrorData() {
@@ -47,7 +47,12 @@ class RetrieveGistRequest: NetworkRequest {
         var description = ""
         
         if data["message"] as? String == "Bad credentials" {
-            description = "Your access token expired"
+            UserDefaults.standard.set(true, forKey: "receivedInvalidTokenNotification")
+            
+            KeychainWrapper.standard.set("", forKey: "token")
+            userInfo["expired"] = true
+        } else if data["message"] as? String == "Not Found" {
+            description = "The Gist could not be found. Are you sure this is the right QR Code?"
         }
             //TODO: Map other erros for user friendly messages
         else {
@@ -57,6 +62,6 @@ class RetrieveGistRequest: NetworkRequest {
         userInfo["title"] = title
         userInfo["description"] = description
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidReceiveLoginError"), object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kDidReceiveGistError"), object: nil, userInfo: userInfo)
     }
 }
