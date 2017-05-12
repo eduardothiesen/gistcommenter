@@ -29,6 +29,9 @@
 		7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */; };
 		7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */; };
 		7D52094E1EC33D7B00637685 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D52094D1EC33D7B00637685 /* AVFoundation.framework */; };
+		7D5A153C1EC4F799004396D3 /* PostCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5A153B1EC4F799004396D3 /* PostCommentRequest.swift */; };
+		7D5A15421EC4FA55004396D3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5A15411EC4FA55004396D3 /* CommentTableViewCell.swift */; };
+		7D5A15441EC51401004396D3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5A15431EC51401004396D3 /* Comment.swift */; };
 		7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */; };
 		7D8E3A191EC3C3C1005FC419 /* GistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E3A181EC3C3C1005FC419 /* GistViewController.swift */; };
 		7D8E3A1E1EC3EEFE005FC419 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */; };
@@ -81,6 +84,9 @@
 		7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
 		7D52094D1EC33D7B00637685 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7D5A153B1EC4F799004396D3 /* PostCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentRequest.swift; sourceTree = "<group>"; };
+		7D5A15411EC4FA55004396D3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		7D5A15431EC51401004396D3 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveGistRequest.swift; sourceTree = "<group>"; };
 		7D8E3A181EC3C3C1005FC419 /* GistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GistViewController.swift; path = ../GistViewController.swift; sourceTree = "<group>"; };
 		7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		7D117E361EC299E400DBDC4C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7DF7BDBF1EC4C8FD0033AFFA /* Cells */,
 				7D117E301EC2995C00DBDC4C /* WelcomeTutorialViewController.swift */,
 				7D117E311EC2995C00DBDC4C /* BeginViewController.swift */,
 				7D117E321EC2995C00DBDC4C /* LoginViewController.swift */,
@@ -209,6 +216,7 @@
 				7D49B1081EC2895D00D22A66 /* NetworkRequest.swift */,
 				7D49B10A1EC2906D00D22A66 /* AuthenticationRequest.swift */,
 				7D6D2D3C1EC39B2500560A49 /* RetrieveGistRequest.swift */,
+				7D5A153B1EC4F799004396D3 /* PostCommentRequest.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -235,8 +243,17 @@
 			isa = PBXGroup;
 			children = (
 				7D8E3A1D1EC3EEFE005FC419 /* Gist.swift */,
+				7D5A15431EC51401004396D3 /* Comment.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		7DF7BDBF1EC4C8FD0033AFFA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D5A15411EC4FA55004396D3 /* CommentTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +407,7 @@
 				7D49B0D31EC2877F00D22A66 /* ViewController.swift in Sources */,
 				7D117E2E1EC2968400DBDC4C /* CustomTextField.swift in Sources */,
 				7D3271801EC33B1D00DC373B /* Alert.swift in Sources */,
+				7D5A15421EC4FA55004396D3 /* CommentTableViewCell.swift in Sources */,
 				7D8E3A191EC3C3C1005FC419 /* GistViewController.swift in Sources */,
 				7D49B1091EC2895D00D22A66 /* NetworkRequest.swift in Sources */,
 				7D117E331EC2995C00DBDC4C /* WelcomeTutorialViewController.swift in Sources */,
@@ -397,6 +415,8 @@
 				7D32717C1EC3366900DC373B /* KeychainWrapper.swift in Sources */,
 				7D8E3A1E1EC3EEFE005FC419 /* Gist.swift in Sources */,
 				7D49B10B1EC2906D00D22A66 /* AuthenticationRequest.swift in Sources */,
+				7D5A153C1EC4F799004396D3 /* PostCommentRequest.swift in Sources */,
+				7D5A15441EC51401004396D3 /* Comment.swift in Sources */,
 				7D6D2D3D1EC39B2500560A49 /* RetrieveGistRequest.swift in Sources */,
 				7D32717B1EC3366900DC373B /* KeychainItemAccessibility.swift in Sources */,
 			);

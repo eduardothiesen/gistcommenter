@@ -19,6 +19,8 @@ class BeginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         if UserDefaults.standard.bool(forKey: "receivedInvalidTokenNotification") {
             Alert.createAlert(title: "Ops, something went wrong", message: "Your session expired. Please, log in again.", viewController: self)
             

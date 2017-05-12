@@ -16,15 +16,18 @@ class AuthenticationRequest: NetworkRequest {
     var url: String
     var username: String
     var password: String
+    var twoFactorId: String?
     
-    init(url: String, username: String, password: String) {
+    init(url: String, username: String, password: String, twoFactorId: String?) {
         self.url = url
         self.username = username
         self.password = password
+        self.twoFactorId = twoFactorId
     }
     
     override func start() {
         let auth = "\(username):\(password)".data(using: String.Encoding.utf8)
+        
         let params = ["scopes" : ["gist"],
                       "client_id" : AuthenticationRequest.clientId,
                       "client_secret" : AuthenticationRequest.clientSecret] as [String : Any]
@@ -34,6 +37,10 @@ class AuthenticationRequest: NetworkRequest {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("Basic \(auth!.base64EncodedString())", forHTTPHeaderField: "Authorization")
+        
+        if let twoFactor = self.twoFactorId {
+            request.addValue(twoFactor, forHTTPHeaderField: "X-GitHub-OTP")
+        }
         
         request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         
@@ -55,12 +62,16 @@ class AuthenticationRequest: NetworkRequest {
     override func processErrorData() {
         let data = try! JSONSerialization.jsonObject(with: incomingData as Data, options: .allowFragments) as! [String : Any]
         
+        print(data)
+        
         var userInfo: [String : Any] = [:]
         let title = "Ops, something went wrong"
         var description = ""
         
         if data["message"] as? String == "Bad credentials" {
             description = "The username or password are incorrect. Please, try again."
+        } else if data["message"] as? String == "Must specify two-factor authentication OTP code." {
+            userInfo["two-factor"] = true
         }
         //TODO: Map other erros for user friendly messages
         else {

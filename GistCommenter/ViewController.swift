@@ -31,6 +31,8 @@ class ViewController: UIViewController {
                               AVMetadataObjectTypePDF417Code,
                               AVMetadataObjectTypeQRCode]
 
+    var gist: Gist!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +75,14 @@ class ViewController: UIViewController {
         return .lightContent
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as! UINavigationController
+        let gvc = nav.topViewController as! GistViewController
+        
+        gvc.gist = self.gist
+
+    }
+    
     @IBAction func userDidTouchUpInsideGrantPermissionButton(_ sender: Any) {
         if accessButton.titleLabel?.text == "Grant Permission" {
             requestCameraAccess()
@@ -88,6 +98,10 @@ class ViewController: UIViewController {
     }
     
     func didReceiveGist(notification: Notification) {
+        let userInfo = notification.userInfo as! [String : Gist]
+        
+        self.gist = userInfo["Gist"]
+        
         OperationQueue.main.addOperation { 
             self.performSegue(withIdentifier: "gist", sender: self)
         }
@@ -102,7 +116,7 @@ class ViewController: UIViewController {
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "beginViewController")
                 
                 OperationQueue.main.addOperation {
-                    self.show(viewController!, sender: viewController)
+                    self.show(viewController!, sender: self)
                 }
             }
         } else {

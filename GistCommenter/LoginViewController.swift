@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
             loader.startAnimating()
             disableFields()
             
-            NetworkController.shared.login(username: usernameTextField.text!, password: passwordTextField.text!)
+            NetworkController.shared.login(username: usernameTextField.text!, password: passwordTextField.text!, twoFactorId: nil)
         } else {
             Alert.createAlert(title: "Enter username and password", message: "All fields are required for authentication", viewController: self)
         }
@@ -110,10 +110,33 @@ class LoginViewController: UIViewController {
         let userInfo = notification.userInfo as! [String : Any]
         
         OperationQueue.main.addOperation {
-            Alert.createAlert(title: userInfo["title"] as! String?, message: userInfo["description"] as! String, viewController: self)
-            
             self.enableFields()
             self.loader.stopAnimating()
+            
+            if userInfo["two-factor"] as? Bool == true {
+                let alertController = UIAlertController(title: "Almost there", message: userInfo["description"] as? String, preferredStyle: .alert)
+                
+                alertController.addTextField(configurationHandler: { (textField) in
+                    textField.placeholder = "Verification Code"
+                })
+                
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                let confirm = UIAlertAction(title: "Login", style: .default, handler: { (UIAlertAction) in
+                    if let field = alertController.textFields?[0] {
+                    print(field.text)
+                    
+                    NetworkController.shared.login(username: self.usernameTextField.text!, password: self.passwordTextField.text!, twoFactorId: field.text)
+                    }
+                })
+                
+                alertController.addAction(cancel)
+                alertController.addAction(confirm)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else {
+                Alert.createAlert(title: userInfo["title"] as! String?, message: userInfo["description"] as! String, viewController: self)
+            }
         }
     }
 }
